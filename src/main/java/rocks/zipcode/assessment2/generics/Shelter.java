@@ -2,10 +2,14 @@ package rocks.zipcode.assessment2.generics;
 
 
 
+import rocks.zipcode.assessment2.generics.ageable.Ageable;
 import rocks.zipcode.assessment2.generics.ageable.Cat;
 import rocks.zipcode.assessment2.generics.ageable.Dog;
 import rocks.zipcode.assessment2.generics.ageable.Person;
 
+import java.util.ArrayList;
+
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,11 +22,15 @@ import java.util.List;
 public class Shelter<T>{
     private T element;
 
+//ZERO CLUE
 
     public Shelter() {
 
+
         throw new NullPointerException();
     }
+
+
 
     /**
      * @return the number of item in the shelter
@@ -33,7 +41,6 @@ public class Shelter<T>{
     }
 
     public void add(Object object) {
-
     }
 
     public Boolean contains(Object object) {
