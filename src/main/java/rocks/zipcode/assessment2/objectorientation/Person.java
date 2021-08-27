@@ -2,6 +2,8 @@ package rocks.zipcode.assessment2.objectorientation;
 
 import rocks.zipcode.assessment2.objectorientation.animals.Dog;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
@@ -60,8 +62,13 @@ public class Person extends Address {
                 '}';
     }
 
+
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        if (!super.equals(o)) return false;
+        Person person = (Person) o;
+        return Objects.equals(getId(), person.getId()) && Objects.equals(getName(), person.getName()) && Objects.equals(getAddress(), person.getAddress());
     }
 }

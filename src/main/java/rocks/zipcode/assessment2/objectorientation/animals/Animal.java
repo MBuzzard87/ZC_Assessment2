@@ -12,8 +12,10 @@ public class Animal extends Person{
     Person owner;
 
 
+
     public Animal() {
-        id = Long.MIN_VALUE;
+        this.id = null;
+        this.owner = new Person();
     }
 
     /**

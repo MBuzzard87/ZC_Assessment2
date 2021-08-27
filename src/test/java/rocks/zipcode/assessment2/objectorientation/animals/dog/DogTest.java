@@ -12,7 +12,7 @@ import rocks.zipcode.assessment2.objectorientation.animals.Woofer;
 public class DogTest {
     @Test
     public void testInheritance() {
-        Animal dog = (Animal)(Object)new Dog();
+        Animal dog = new Dog();
 
         Assert.assertTrue(dog instanceof Animal);
     }

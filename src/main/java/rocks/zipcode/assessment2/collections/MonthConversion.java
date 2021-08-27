@@ -1,6 +1,5 @@
 package rocks.zipcode.assessment2.collections;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,18 +23,22 @@ public class MonthConversion {
      */
     public String getName(Integer monthNumber) {
 
+        if (isValidNumber(monthNumber)) {
+            return intMonth.get(monthNumber);
+        }
+        return null;
 
-        return intMonth.get(monthNumber);
+
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        Integer month = 1;
+    public Integer getNumber(String monthName) {
+        Integer month = null;
         for(Integer monthNum : intMonth.keySet()) {
-            if (intMonth.get(monthNum).equals(monthName)) {
+            if (intMonth.get(monthNum) == monthName) {
                 month = monthNum;
             }
 

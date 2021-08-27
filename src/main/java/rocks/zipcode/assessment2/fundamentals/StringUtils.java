@@ -19,7 +19,6 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        String blank = "";
         return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
@@ -29,11 +28,11 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        String strRepeat = "";
+        StringBuilder strRepeat = new StringBuilder();
         for(int i = 0; i < numberOfTimeToRepeat; i ++) {
-            strRepeat += stringToBeRepeated;
+            strRepeat.append(stringToBeRepeated);
         }
-        return strRepeat;
+        return strRepeat.toString();
     }
 
     /**
@@ -41,13 +40,13 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        String storeStr = "";
+        StringBuilder storeStr = new StringBuilder();
         for(int i = 0; i < string.length(); i++)
         if(Character.isLetter(string.charAt(i)) || Character.isSpaceChar(string.charAt(i))) {
-            storeStr += string.charAt(i);
+            storeStr.append(string.charAt(i));
         }
 
-        return storeStr.equals(string);
+        return storeStr.toString().equals(string);
     }
 
     /**
@@ -55,7 +54,6 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-
         return string.matches("[0-9]+");
     }
 
@@ -64,7 +62,7 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        String splChrs = "-!*/@#$%^&_+=()" ;
-        return string.matches("[" + splChrs+ "]+");
+        String splChars = "-!*/@#$%^&_+=()" ;
+        return string.matches("[" + splChars+ "]+");
     }
 }

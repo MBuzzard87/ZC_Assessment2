@@ -16,7 +16,7 @@ public class PredicateUtilities {
      */
     public static Boolean isOdd(Integer value) {
 
-        return (value - 1) % 2 == 0;
+        return value  % 2 != 0;
     }
 
     /**
@@ -45,15 +45,11 @@ public class PredicateUtilities {
      */
     public static Boolean startsWithCapitalLetter(String string) {
 
-        if(Character.isLetter(string.charAt(0))) {
-            if(string.toUpperCase().charAt(0) == string.charAt(0)) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
+        if(Character.isLetter(string.charAt(0)) && string.toUpperCase().charAt(0) == string.charAt(0)) {
+            return true;
         }
+
+        return false;
 
     }
 }
