@@ -58,8 +58,8 @@ public class Shelter<T> implements Iterable<T>{
     }
 
 
-    @Override
+
     public Iterator<T> iterator() {
-        return shelterList.iterator();
+        return this.shelterList.iterator();
     }
 }
