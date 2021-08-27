@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 /**
  * Shelter is a generic class that holds Objects that extends `Ageable`.
@@ -14,7 +16,7 @@ import java.util.List;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<T> implements Iterable{
+public class Shelter<T> implements Iterable<T>{
     private T t;
 
     List<T> shelterList = new ArrayList<>();
@@ -55,8 +57,9 @@ public class Shelter<T> implements Iterable{
         return shelterList.indexOf(ageable);
     }
 
+
     @Override
-    public Iterator iterator() {
-        return null;
+    public Iterator<T> iterator() {
+        return shelterList.iterator();
     }
 }
